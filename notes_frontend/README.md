@@ -1,16 +1,38 @@
 # notes_frontend
 
-A new Flutter project.
+Modern, minimalistic Flutter notes app with local SQLite.
 
-## Getting Started
+Features:
+- Create, edit, delete notes
+- List and view note details
+- Search notes (title and content)
+- Categorize notes with tags (tag chips and filter)
+- Bottom navigation (Notes, Tags)
+- Floating action button to add notes
+- Slide-to-delete interactions
+- Modals (bottom sheet) for creating and editing notes
+- Uses local SQLite via sqflite
+- Environment-driven config via flutter_dotenv (.env)
 
-This project is a starting point for a Flutter application.
+Colors:
+- Primary: #1976D2
+- Secondary: #90CAF9
+- Accent: #FFC107
 
-A few resources to get you started if this is your first Flutter project:
+Getting started:
+1. Copy .env.example to .env and adjust variables if needed (DB_NAME defaults to notes.db).
+2. flutter pub get
+3. flutter analyze
+4. flutter run
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Environment variables:
+- DB_NAME: SQLite database filename (default: notes.db)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Structure:
+- lib/main.dart: App entry and theme wiring
+- lib/src/models: Note and Tag models
+- lib/src/services: Database helper and repositories
+- lib/src/providers: State management for notes and tags (Provider)
+- lib/src/ui: Pages and widgets for the UI
+- lib/src/theme: Theme builder with provided color palette
+- lib/src/routes.dart: Declarative routes
